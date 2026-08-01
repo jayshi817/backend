@@ -1,0 +1,26 @@
+# Environment variables
+.env
+
+# Database
+database.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploads and data
+uploads/
+backups/
+logs/
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

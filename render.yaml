@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: zinhost
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/me
+    envVars:
+      - key: ADMIN_USERNAME
+        value: loqi
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATA_DIR
+        value: /data
+      - key: MAX_TOTAL_BOTS
+        value: "10"
+      - key: DEFAULT_MAX_BOTS
+        value: "1"
+      - key: DEFAULT_RAM_MB
+        value: "512"
+      - key: DEFAULT_DISK_MB
+        value: "1536"
+    # Render persistent disks require a paid service. If your plan supports one,
+    # uncomment this block and keep the mount path exactly /data.
+    # disk:
+    #   name: zinhost-data
+    #   mountPath: /data
+    #   sizeGB: 1
